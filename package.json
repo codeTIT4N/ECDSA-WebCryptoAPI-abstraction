@@ -1,13 +1,17 @@
 {
   "name": "ecdsa-webcrypto-api-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "ECDSA key generation and verification example using WebCryptoAPI in NodeJs",
   "main": "index.js",
   "scripts": {
-    "install": "echo \"Notice: No install needed for this!\" && exit 0",
+    "build": "npx tsc",
+    "generate-keypair": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Lokesh Kumar (codeTIT4N)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.8",
+    "typescript": "^5.1.6"
+  }
 }

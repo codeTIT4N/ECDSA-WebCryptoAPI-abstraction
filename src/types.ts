@@ -1,9 +1,11 @@
-export interface KeypairBase64 {
+interface KeypairBase64 {
   publicKey: string;
   privateKey: string;
 }
 
-export interface KeypairArrayBuffer {
-  publicKey: ArrayBuffer;
-  privateKey: ArrayBuffer;
-}
+export type GenerateECDSAKeypairFn = () => Promise<KeypairBase64>;
+
+export type SignMessageFn = (
+  message: string,
+  pvtKey: string,
+) => Promise<string>;

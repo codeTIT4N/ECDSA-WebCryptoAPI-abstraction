@@ -1,8 +1,8 @@
 {
-  "name": "ecdsa-webcrypto-api-example",
+  "name": "ecdsa-webcrypto-api-abstraction",
   "version": "1.0.0",
-  "description": "ECDSA key generation and verification example using WebCryptoAPI in NodeJs",
-  "main": "index.js",
+  "description": "This project has a small abstraction over the original [WebCryptoAPI](https://nodejs.org/api/webcrypto.html) for ECDSA signatures.",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",

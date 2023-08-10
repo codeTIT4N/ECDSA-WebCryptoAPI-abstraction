@@ -1,5 +1,16 @@
-import { signMessage } from "./packages";
-import { generateECDSAKeypair } from "./packages/generateECDSAKeypair";
+import {
+  generateECDSAKeypairBase64,
+  signMessage,
+  verifySignedMessage,
+} from "./packages";
 
-generateECDSAKeypair();
-signMessage();
+async function main() {
+  let keypair = await generateECDSAKeypairBase64();
+  console.log(keypair);
+  const message = "Hello!";
+  let signature = await signMessage(message, keypair.privateKey);
+  console.log(signature);
+  verifySignedMessage(keypair.publicKey, message, signature);
+}
+
+main();

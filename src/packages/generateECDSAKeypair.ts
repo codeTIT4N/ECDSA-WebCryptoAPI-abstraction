@@ -4,9 +4,9 @@ import {
   convertArrayBufferToBase64,
   convertBase64ToArrayBuffer,
 } from "../utils";
-import { KeypairBase64, KeypairArrayBuffer } from "../types";
+import { GenerateECDSAKeypairFn } from "../types";
 
-export const generateECDSAKeypairBase64 = async (): Promise<KeypairBase64> => {
+export const generateECDSAKeypairBase64: GenerateECDSAKeypairFn = async () => {
   // Key generation
   const keypair = await crypto.subtle.generateKey(
     {
@@ -38,8 +38,6 @@ export const generateECDSAKeypairBase64 = async (): Promise<KeypairBase64> => {
     publicKey: finalPublicKey,
     privateKey: finalPrivateKey,
   };
-
-  console.log("Generated Keypair", finalKeys);
 
   // ---------------- TEST ---------------- //
 

@@ -1,13 +1,19 @@
 {
-  "name": "ecdsa-webcrypto-api-example",
+  "name": "ecdsa-webcrypto-api-abstraction",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This project has a small abstraction over the original [WebCryptoAPI](https://nodejs.org/api/webcrypto.html) for ECDSA signatures.",
+  "main": "dist/index.js",
   "scripts": {
-    "install": "echo \"Notice: No install needed for this!\" && exit 0",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "npx ts-node src/index.ts",
+    "generate-keypair": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Lokesh Kumar (codeTIT4N)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.8",
+    "typescript": "^5.1.6"
+  }
 }

@@ -3,6 +3,12 @@
 This project has a small abstraction over the original [WebCryptoAPI](https://nodejs.org/api/webcrypto.html)
 for ECDSA signatures.
 
+### Try out an example
+
+```bash
+npm run example
+```
+
 ### About
 
 - This uses the [WebCryptoAPI](https://nodejs.org/api/webcrypto.html), which is natively available in

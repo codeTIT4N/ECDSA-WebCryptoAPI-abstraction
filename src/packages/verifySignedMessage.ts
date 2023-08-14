@@ -1,10 +1,11 @@
 import { convertBase64ToArrayBuffer } from "../utils";
 import * as crypto from "crypto";
+import { VerifySignedMessageFn } from "../types";
 
-export const verifySignedMessage = async (
-  pubKey: string,
-  message: string,
-  signature: string,
+export const verifySignedMessage: VerifySignedMessageFn = async (
+  pubKey,
+  message,
+  signature,
 ) => {
   const importedPublicKey = await crypto.subtle.importKey(
     "spki",
@@ -26,5 +27,6 @@ export const verifySignedMessage = async (
     convertBase64ToArrayBuffer(signature),
     new TextEncoder().encode(message),
   );
-  console.log("signature verified: ", isVerified);
+
+  return isVerified;
 };

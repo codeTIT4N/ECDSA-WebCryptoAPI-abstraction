@@ -9,3 +9,9 @@ export type SignMessageFn = (
   message: string,
   pvtKey: string,
 ) => Promise<string>;
+
+export type VerifySignedMessageFn = (
+  pubKey: string,
+  message: string,
+  signature: string,
+) => Promise<boolean>;

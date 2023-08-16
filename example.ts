@@ -31,7 +31,7 @@ async function main() {
   let signature = await signMessage(messagetoSign, keypair.privateKey);
 
   console.log(
-    "Signature created by signing the message using the private key:",
+    "Signature created by signing the message using the private key(base64):",
     signature,
   );
 

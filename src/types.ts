@@ -1,4 +1,4 @@
-interface KeypairBase64 {
+export interface KeypairBase64 {
   publicKey: string;
   privateKey: string;
 }
